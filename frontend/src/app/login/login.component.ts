@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder} from '@angular/forms'
 import { Router } from '@angular/router';
+import { ProductService } from '../shared/services/product.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   public loginForm !: FormGroup;
 
-  constructor(private formbuilder: FormBuilder,private http:HttpClient,private router:Router) { }
+  constructor(private formbuilder: FormBuilder,private productService:ProductService,  private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formbuilder.group({
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
           return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
         });
         if (user) {
-          alert("Login succesfull!!")
+        this.productService.showMessage('Login Successful');
           this.loginForm.reset()
           this.router.navigate(['products'])
         } else {

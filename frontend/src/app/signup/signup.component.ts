@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder} from '@angular/forms'
 import { Router } from '@angular/router';
 
+import { ProductService } from '../shared/services/product.service';
+
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -11,7 +14,7 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
   public signupForm !: FormGroup;
 
-  constructor(private formbuilder: FormBuilder, private http:HttpClient , private router:Router) { }
+  constructor(private formbuilder: FormBuilder,private productService: ProductService, private http:HttpClient , private router:Router) { }
 
   ngOnInit(): void {
     this.signupForm = this.formbuilder.group({
@@ -25,7 +28,7 @@ export class SignupComponent implements OnInit {
     this.http.post<any>('http://localhost:3001/signupUsers', this.signupForm.value)
       .subscribe(res => {
         console.log(res);
-        alert("Signup Successful");
+        this.productService.showMessage('Signup Successful');
         this.signupForm.reset();
         this.router.navigate(['login'])
       }, err => {

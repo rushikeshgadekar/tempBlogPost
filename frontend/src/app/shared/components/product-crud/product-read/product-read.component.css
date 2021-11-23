@@ -16,6 +16,14 @@ th.mat-sort-header-sorted {
   color: #e35e6b;
 }
 
-.demo {
+.heart:hover {
+  cursor: pointer;
+  /* background-color: green; */
+  transform-origin: center;
+  transform: scale(1.05);
+  transition: all 0.1s ease-in;
+  display: block;
+}
+.red {
   color: red;
 }
