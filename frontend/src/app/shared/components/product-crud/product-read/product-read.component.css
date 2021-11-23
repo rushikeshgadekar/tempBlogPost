@@ -1,17 +1,21 @@
-
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 table {
-    margin-top: 20px;
-    width: 100%;
+  margin-top: 20px;
+  width: 100%;
 }
 
 th.mat-sort-header-sorted {
-    color: black;
+  color: black;
 }
 
 .edit > i {
-    color: #D9CD26;
+  color: #d9cd26;
 }
 
 .delete > i {
-    color: #E35E6B;
+  color: #e35e6b;
+}
+
+.demo {
+  color: red;
 }
