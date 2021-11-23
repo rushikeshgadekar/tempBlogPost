@@ -21,7 +21,8 @@
     {
       "name": "adf",
       "desc": "adfad",
-      "id": 4
+      "id": 4,
+      "liked":false
     }
   ],
   "signupUsers": [
