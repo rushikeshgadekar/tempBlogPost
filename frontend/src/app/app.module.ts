@@ -32,6 +32,7 @@ import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 registerLocaleData(localePt);
 
@@ -49,7 +50,8 @@ registerLocaleData(localePt);
     MainComponent,
     SectionComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

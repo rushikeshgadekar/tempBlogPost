@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="text-center">Profile Page</div>
+  <div class="card" style="width: 38rem">
+    <div class="card-body" *ngFor="let data of profile" (click)="ngOnInit()">
+      <h5 class="card-title">{{ data.fullname }}</h5>
+      <p class="card-text">
+        {{ data.email }}
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
